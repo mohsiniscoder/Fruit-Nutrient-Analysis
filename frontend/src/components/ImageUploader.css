@@ -1,0 +1,52 @@
+.uploader-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  /* File input */
+  .uploader-container input[type="file"] {
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Image preview */
+  .uploader-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+  }
+  
+  /* Error message */
+  .uploader-container .error {
+    color: red;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  
+  /* Upload button */
+  .uploader-container button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .uploader-container button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,36 +1,26 @@
-import React, { useContext, useState } from "react";
-import { AuthProvider, AuthContext } from "./contexts/AuthContext";
-import ImageUploader from "./components/ImageUploader";
-import NutrientResult from "./components/NutrientResult";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
 
-const MainApp = () => {
-  const { user, signIn, signOut } = useContext(AuthContext);
-  const [nutrients, setNutrients] = useState(null);
-
-  if (!user) {
-    return (
-      <div className="p-8">
-        <h1 className="text-xl mb-4">Please Sign In</h1>
-        {/* implement your signIn UI here */}
-      </div>
-    );
-  }
-
+const App = () => {
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Fruit Nutrient Analysis</h1>
-      <ImageUploader onResult={setNutrients} />
-      <NutrientResult data={nutrients} />
-      <button onClick={signOut} className="mt-6">Sign Out</button>
-    </div>
+    <AuthProvider>
+      <Navbar />
+      <div className="p-6">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
+    </AuthProvider>
   );
 };
-
-const App = () => (
-  <AuthProvider>
-    <h1>Hello World</h1>
-    <MainApp />
-  </AuthProvider>
-);
 
 export default App;

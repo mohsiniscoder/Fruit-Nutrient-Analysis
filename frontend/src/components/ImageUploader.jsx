@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import api from "../api/axiosConfig";
 import { AuthContext } from "../contexts/AuthContext";
+import './ImageUploader.css';
 
 const ImageUploader = ({ onResult }) => {
   const [file, setFile] = useState(null);
@@ -9,7 +10,7 @@ const ImageUploader = ({ onResult }) => {
   const { mfaVerified } = useContext(AuthContext);
 
   const validateFile = (f) => {
-    const allowed = ["image/jpeg","image/png","image/webp"];
+    const allowed = ["image/jpeg", "image/png", "image/webp"];
     if (!allowed.includes(f.type)) return "Only JPEG, PNG or WEBP allowed";
     if (f.size > 5 * 1024 * 1024) return "Max 5MB";
     return null;
@@ -52,10 +53,10 @@ const ImageUploader = ({ onResult }) => {
   };
 
   return (
-    <div>
+    <div className="uploader-container">
       <input type="file" accept="image/*" onChange={handlePick} />
-      {error && <p className="text-red-600">{error}</p>}
-      {preview && <img src={preview} alt="preview" className="w-32 h-32" />}
+      {error && <p className="error">{error}</p>}
+      {preview && <img src={preview} alt="preview" />}
       <button onClick={handleUpload}>Analyze Nutrients</button>
     </div>
   );

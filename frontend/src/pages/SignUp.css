@@ -1,0 +1,92 @@
+/* Navbar compensation wrapper */
+.signup-container-wrapper {
+    margin-top: 70px; /* pushes the card below the fixed navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px); /* fills viewport minus navbar */
+    background: linear-gradient(to right, #43e97b, #38f9d7);
+    padding: 20px;
+  }
+  
+  /* Signup form card */
+  .signup-container {
+    background-color: #ffffff;
+    padding: 60px 40px;
+    min-height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Heading */
+  .signup-container h2 {
+    margin-bottom: 24px;
+    font-size: 28px;
+    color: #333333;
+  }
+  
+  /* Error message */
+  .signup-container .error {
+    color: red;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  
+  /* Inputs */
+  .signup-container input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .signup-container input:focus {
+    outline: none;
+    border-color: #38f9d7;
+  }
+  
+  /* Button */
+  .signup-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-container button:hover {
+    background-color: #218838;
+  }
+  
+  /* Link */
+  .signup-container p {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .signup-container a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .signup-container a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  
